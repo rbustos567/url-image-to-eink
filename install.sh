@@ -23,8 +23,14 @@ else
     echo "Warning: raspi-config not found. Make sure SPI is enabled manually."
 fi
 
+echo "==> Cloning Waveshare repository (shallow clone)..."
+git clone --depth 1 https://github.com/waveshare/e-Paper.git /tmp/e-Paper-repo
+
 echo "==> Installing Waveshare e-Paper library globally..."
-sudo pip3 install --break-system-packages git+https://github.com/waveshare/e-Paper.git#subdirectory=RaspberryPi_JetsonNano/python
+sudo pip3 install --break-system-packages /tmp/e-Paper-repo/RaspberryPi_JetsonNano/python
+
+echo "==> Cleaning up temporary files..."
+rm -rf /tmp/e-Paper-repo
 
 echo "=========================================================="
 echo " Installation Complete!"

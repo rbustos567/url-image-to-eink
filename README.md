@@ -6,11 +6,15 @@ chmod +x install.sh
 sudo ./install.sh
 ```
 ## Usage Examples
-### Generate a local preview
+### Generate a local preview using a local file
 ```bash
-python3 url_jpg_to_eink.py "https://picsum.photos/800/480" --width 800 --height 480 --output /tmp/random_eink.png
+python3 url_jpg_to_eink.py /home/pi/photos/my_photo.jpg -o /tmp/eink_preview.png
 ```
-### Send directly to the connected Waveshare screen
+### Using a local file to send it directly to the connected Waveshare screen
 ```bash
-python3 url_jpg_to_eink.py "https://picsum.photos/800/480" --width 800 --height 480 --model epd7in5_V2 --display
+python3 url_jpg_to_eink.py ~/photos/street.jpg --gamma 1.2 --contrast 1.7 --display
+```
+### Using remote URL
+```bash
+python3 url_jpg_to_eink.py "https://picsum.photos/800/480" -o /tmp/eink_preview.png --display
 ```

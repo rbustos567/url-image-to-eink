@@ -10,7 +10,7 @@ sudo ./install.sh
 ```bash
 python3 url_jpg_to_eink.py /home/pi/photos/my_photo.jpg -o /tmp/eink_preview.png
 ```
-### Using a local file to send it directly to the connected Waveshare screen
+### Using a local jpg to send it directly to the connected Waveshare screen
 ```bash
 python3 url_jpg_to_eink.py ~/photos/street.jpg --gamma 1.2 --contrast 1.7 --display
 ```
